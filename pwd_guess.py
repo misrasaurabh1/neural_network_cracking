@@ -939,6 +939,7 @@ class Trainer(object):
         model.compile(loss='categorical_crossentropy',
                       optimizer=self.config.model_optimizer,
                       metrics=metrics)
+        print(model.summary())
         self.model = model
 
     def init_layers(self):
