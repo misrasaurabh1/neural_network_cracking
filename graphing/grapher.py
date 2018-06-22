@@ -9,10 +9,10 @@ if __name__ == "__main__":
     parser.add_argument("outfile")
     args = parser.parse_args()
     fnames = glob.glob("lookupresults.*")
-    assert len(fnames) != 0, "Couldn't find file of the name lookupresults.*"
+    assert len(fnames) != 0, "Couldn't find file of the name lookupresults.* in current directory"
     conditions = set()
     for f in fnames:
-        m = re.search(r".*?\.(.*)",f)
+        m = re.search(r".*?\.(.*)", f)
         conditions.add(m.group(1))
 
     for condition in conditions:
