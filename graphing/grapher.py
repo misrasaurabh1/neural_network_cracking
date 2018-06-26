@@ -20,7 +20,10 @@ if __name__ == "__main__":
         with open("lookupresults.{}".format(condition)) as f:
             for line in f:
                 try:
-                    guesses.append(int(line.split("\t")[5]))
+                    guess_num = int(line.split("\t")[5])
+                    if guess_num < 0:
+                        continue
+                    guesses.append(guess_num)
                 except:
                     continue
             guesses.sort()
